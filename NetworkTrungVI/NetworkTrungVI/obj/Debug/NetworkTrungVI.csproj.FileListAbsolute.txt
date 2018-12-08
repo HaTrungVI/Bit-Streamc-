@@ -1,0 +1,7 @@
+E:\Lam\c#\NetworkTrungVI\NetworkTrungVI\bin\Debug\NetworkTrungVI.dll
+E:\Lam\c#\NetworkTrungVI\NetworkTrungVI\bin\Debug\NetworkTrungVI.pdb
+E:\Lam\c#\NetworkTrungVI\NetworkTrungVI\obj\Debug\NetworkTrungVI.csprojResolveAssemblyReference.cache
+E:\Lam\c#\NetworkTrungVI\NetworkTrungVI\obj\Debug\NetworkTrungVI.dll
+E:\Lam\c#\NetworkTrungVI\NetworkTrungVI\obj\Debug\NetworkTrungVI.pdb
+E:\Lam\c#\NetworkTrungVI\NetworkTrungVI\bin\Debug\UnityEngine.dll
+E:\Lam\c#\NetworkTrungVI\NetworkTrungVI\bin\Debug\UnityEngine.xml
