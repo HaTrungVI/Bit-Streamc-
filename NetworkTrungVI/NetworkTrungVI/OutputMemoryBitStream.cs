@@ -156,6 +156,54 @@ namespace NetworkTrungVI
             }
         }
 
+        public void Write(UInt32 inData, int inBitCount = sizeof(UInt32) * 8)
+        {
+            byte[] ConvertData = BitConverter.GetBytes(inData);
+            int dataIndex = 0;
+            while (inBitCount > 8)
+            {
+                WriteBits(ConvertData[dataIndex], 8);
+                inBitCount -= 8;
+                ++dataIndex;
+            }
+            if (inBitCount > 0)
+            {
+                WriteBits(ConvertData[dataIndex], inBitCount);
+            }
+        }
+
+        public void Write(UInt16 inData, int inBitCount = sizeof(UInt16) * 8)
+        {
+            byte[] ConvertData = BitConverter.GetBytes(inData);
+            int dataIndex = 0;
+            while (inBitCount > 8)
+            {
+                WriteBits(ConvertData[dataIndex], 8);
+                inBitCount -= 8;
+                ++dataIndex;
+            }
+            if (inBitCount > 0)
+            {
+                WriteBits(ConvertData[dataIndex], inBitCount);
+            }
+        }
+
+        public void Write(UInt64 inData, int inBitCount = sizeof(UInt64) * 8)
+        {
+            byte[] ConvertData = BitConverter.GetBytes(inData);
+            int dataIndex = 0;
+            while (inBitCount > 8)
+            {
+                WriteBits(ConvertData[dataIndex], 8);
+                inBitCount -= 8;
+                ++dataIndex;
+            }
+            if (inBitCount > 0)
+            {
+                WriteBits(ConvertData[dataIndex], inBitCount);
+            }
+        }
+
         #region nếu bạn không dùng unity engine thì có thể xóa phần này
         public void Write(Vector3 inData)
         {

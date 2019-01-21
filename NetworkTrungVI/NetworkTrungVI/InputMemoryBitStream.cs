@@ -124,6 +124,57 @@ namespace NetworkTrungVI
             outData = Encoding.ASCII.GetString(ConvertData);
         }
 
+        public void Read(ref UInt32 outData, int inLength = sizeof(UInt32) * 8)
+        {
+            byte[] ConvertData = new byte[inLength >> 3];
+            int dataIndex = 0;
+            while (inLength > 8)
+            {
+                ReadBits(ref ConvertData[dataIndex], 8);
+                inLength -= 8;
+                ++dataIndex;
+            }
+            if (inLength > 0)
+            {
+                ReadBits(ref ConvertData[dataIndex], inLength);
+            }
+            outData = BitConverter.ToUInt32(ConvertData, 0);
+        }
+
+        public void Read(ref UInt16 outData, int inLength = sizeof(UInt16) * 8)
+        {
+            byte[] ConvertData = new byte[inLength >> 3];
+            int dataIndex = 0;
+            while (inLength > 8)
+            {
+                ReadBits(ref ConvertData[dataIndex], 8);
+                inLength -= 8;
+                ++dataIndex;
+            }
+            if (inLength > 0)
+            {
+                ReadBits(ref ConvertData[dataIndex], inLength);
+            }
+            outData = BitConverter.ToUInt16(ConvertData, 0);
+        }
+
+        public void Read(ref UInt64 outData, int inLength = sizeof(UInt64) * 8)
+        {
+            byte[] ConvertData = new byte[inLength >> 3];
+            int dataIndex = 0;
+            while (inLength > 8)
+            {
+                ReadBits(ref ConvertData[dataIndex], 8);
+                inLength -= 8;
+                ++dataIndex;
+            }
+            if (inLength > 0)
+            {
+                ReadBits(ref ConvertData[dataIndex], inLength);
+            }
+            outData = BitConverter.ToUInt64(ConvertData, 0);
+        }
+
         #region nếu bạn không dùng unity engine thì có thể xóa phần này
         public void Read(ref Vector3 outData)
         {
